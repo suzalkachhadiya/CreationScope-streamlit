@@ -80,6 +80,9 @@ Follow these steps to get started with the project:
    ```
    This command will install all the required packages listed in the requirements.txt file.
 
+6. **\.env file**
+    create .env file and put all required API Keys inside it.
+
 7. **Run the Streamlit App:**
    ```bash
    streamlit run Creation_Scope.py
