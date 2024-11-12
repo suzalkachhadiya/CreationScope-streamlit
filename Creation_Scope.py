@@ -1,74 +1,21 @@
 import streamlit as st
-from src.creationScope.crew import UseCasesGenCrew
 
-class UseCaseGenUI:
-    
-    # def load_markdown_template(self):
-    #     with open("src/CreationScope/config/newsletter_template.html", "r") as file:
-    #         markdown_template = file.read()
+st.set_page_config(page_title="CreationScope",layout="wide")
+st.title(":blue[CreationScope]")
+# st.header(":blue[CreationScope]",divider="rainbow")
 
-    #     return markdown_template
-    
-    def generate_use_cases(self,company):
-        inputs = {
-            "company": company,
-            # "personal_message": personal_message,
-            # "html_template": self.load_html_template(),
-        }
-        return UseCasesGenCrew().crew().kickoff(inputs=inputs)
-    
-    def use_case_generation(self):
+st.subheader("How it Works?", divider="rainbow")
+st.write("""Our multi-agent AI system operates as your intelligent research assistant, powered by three specialized agents working in harmony. When you input a company name, the Research Agent first scours the internet to gather comprehensive information about the company's core business and strategic focus. This intelligence is then passed to our Use Case Generator Agent, which analyzes the data to identify promising opportunities for implementing AI technologies like GenAI, LLMs, and ML solutions within the company's context. Finally, our Resource Collector Agent steps in to locate relevant datasets, models, and implementation resources from platforms like Kaggle, HuggingFace, and GitHub, ensuring that each proposed AI solution has practical resources to support its implementation. The entire process culminates in a detailed report that bridges the gap between possibility and practicality in AI adoption.""")
 
-        if st.session_state.generating:
-            st.session_state.use_cases = self.generate_use_cases(
-                st.session_state.company
-            )
+st.header("What is the approach behind it?", divider="rainbow")
+col1,col2,col3=st.columns([1,2,1])
+with col2:
+    st.image(r"C:\DataScience\Gen_AI\CreationScope\assets\Project Workflow.jpg")
+st.write("Our approach leverages Crew AI's multi-agent architecture to create an intelligent system that breaks down complex AI implementation analysis into manageable, specialized tasks. Each agent in our system acts as an expert in its domain - from company research to use case generation and resource collection. Through this orchestrated workflow, the agents work in harmony: gathering comprehensive company information, analyzing AI implementation possibilities focusing on GenAI and LLMs, and matching these opportunities with practical resources from leading platforms. This systematic division of responsibilities ensures both efficiency and thoroughness in delivering actionable AI implementation strategies.")
 
-        if st.session_state.use_cases and st.session_state.use_cases != "":
-            with st.container():
-                st.write("Use Cases generated successfully!")
-                st.download_button(
-                    label="Download Report",
-                    data=st.session_state.use_cases,
-                    file_name="use_cases.md",
-                    mime="text/markdown",
-                )
-            st.session_state.generating = False
-    
-    def sidebar(self):
-        with st.sidebar:
-            st.title("Use Case Generator")
-
-            st.write(
-                """
-                To generate a newsletter, enter a company name and a groq api key. \n
-                Your team of AI agents will generate a use case for that company!
-                """
-            )
-
-            st.text_input("Company", key="company", placeholder="ABC Pvt Ltd.")
-            
-            if st.button("Generate Use Cases"):
-                st.session_state.generating = True
-    
-    def render(self):
-        st.set_page_config(page_title="Use Case Generation", page_icon="📧",layout="wide")
-        
-        st.title("creation scope")
-
-        if "company" not in st.session_state:
-            st.session_state.topic = ""
-            
-        if "use_cases" not in st.session_state:
-            st.session_state.use_cases=""
-
-        if "generating" not in st.session_state:
-            st.session_state.generating = False
-
-        self.sidebar()
-
-        self.use_case_generation()
-
-
-if __name__ == "__main__":
-    UseCaseGenUI().render()
+st.markdown("---")
+st.subheader("Let's Connect")
+st.write("LinkedIn: https://www.linkedin.com/in/suzal-kachhadiya-149498237/")
+st.write("GitHub: https://github.com/suzalkachhadiya")
+st.write("Email: suzalkachhadiya@gmail.com")
+st.write("Phone: +91 8488855887")
