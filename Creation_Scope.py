@@ -10,12 +10,12 @@ st.write("""Our multi-agent AI system operates as your intelligent research assi
 st.header("What is the approach behind it?", divider="rainbow")
 col1,col2,col3=st.columns([1,2,1])
 with col2:
-    st.image(r"C:\DataScience\Gen_AI\CreationScope\assets\Project Workflow.jpg")
+    st.image(r"C:\DataScience\Gen_AI\CreationScope\assets\Project_Workflow.jpg")
 st.write("Our approach leverages Crew AI's multi-agent architecture to create an intelligent system that breaks down complex AI implementation analysis into manageable, specialized tasks. Each agent in our system acts as an expert in its domain - from company research to use case generation and resource collection. Through this orchestrated workflow, the agents work in harmony: gathering comprehensive company information, analyzing AI implementation possibilities focusing on GenAI and LLMs, and matching these opportunities with practical resources from leading platforms. This systematic division of responsibilities ensures both efficiency and thoroughness in delivering actionable AI implementation strategies.")
 
 st.markdown("---")
 st.subheader("Let's Connect")
 st.write("LinkedIn: https://www.linkedin.com/in/suzal-kachhadiya-149498237/")
 st.write("GitHub: https://github.com/suzalkachhadiya")
-st.write("Email: suzalkachhadiya@gmail.com")
+st.write("Email: suzalkachhadiya111@gmail.com")
 st.write("Phone: +91 8488855887")
